@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info: {title: Sample Payments API, version: '1'}
+paths:
+  /payments:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePayment'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: {type: string}
+                  receipt_url: {type: string}
+  /legacy-payments:
+    get:
+      responses:
+        '200': {description: OK}
+components:
+  schemas:
+    CreatePayment:
+      type: object
+      required: [amount]
+      properties:
+        amount: {type: integer}
+        currency: {type: string}

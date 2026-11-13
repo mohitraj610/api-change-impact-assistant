@@ -1,0 +1,8 @@
+[project]
+name = "api-change-impact-assistant"
+version = "0.1.0"
+description = "Investigate the downstream impact of an OpenAPI change."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["langgraph>=1.2.20,<2", "PyYAML>=6.0.2,<7", "pydantic>=2.7,<3"]
